@@ -1,1 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Accordion</title>
 
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+		<link rel="stylesheet" href="accodion.css" />
+	</head>
+	<body>
+		<div class="accordation">
+			<div class="header">
+				<div id="title1" class="title">Header</div>
+				<p id="desc1" class="desc">
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus quis
+					similique sed nihil culpa reprehenderit praesentium hic, inventore qui
+					minus vitae dignissimos accusantium nulla iste voluptates rerum! Eius,
+					earum iure.
+				</p>
+			</div>
+			<div class="header">
+				<div id="title2" class="title">Header</div>
+				<p id="desc2" class="desc">
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus quis
+					similique sed nihil culpa reprehenderit praesentium hic, inventore qui
+					minus vitae dignissimos accusantium nulla iste voluptates rerum! Eius,
+					earum iure.
+				</p>
+			</div>
+			<div class="header">
+				<div id="title3" class="title">Header</div>
+				<p id="desc3" class="desc">
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus quis
+					similique sed nihil culpa reprehenderit praesentium hic, inventore qui
+					minus vitae dignissimos accusantium nulla iste voluptates rerum! Eius,
+					earum iure.
+				</p>
+			</div>
+			<div class="header">
+				<div id="title4" class="title">Header</div>
+				<p id="desc4" class="desc">
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus quis
+					similique sed nihil culpa reprehenderit praesentium hic, inventore qui
+					minus vitae dignissimos accusantium nulla iste voluptates rerum! Eius,
+					earum iure.
+				</p>
+			</div>
+			<div class="header">
+				<div id="title1" class="title">Header</div>
+				<p id="desc1" class="desc">
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus quis
+					similique sed nihil culpa reprehenderit praesentium hic, inventore qui
+					minus vitae dignissimos accusantium nulla iste voluptates rerum! Eius,
+					earum iure.
+				</p>
+			</div>
+			<div class="header">
+				<div id="title2" class="title">Header</div>
+				<p id="desc2" class="desc">
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus quis
+					similique sed nihil culpa reprehenderit praesentium hic, inventore qui
+					minus vitae dignissimos accusantium nulla iste voluptates rerum! Eius,
+					earum iure.
+				</p>
+			</div>
+			<div class="header">
+				<div id="title3" class="title">Header</div>
+				<p id="desc3" class="desc">
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus quis
+					similique sed nihil culpa reprehenderit praesentium hic, inventore qui
+					minus vitae dignissimos accusantium nulla iste voluptates rerum! Eius,
+					earum iure.
+				</p>
+			</div>
+			<div class="header">
+				<div id="title4" class="title">Header</div>
+				<p id="desc4" class="desc">
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus quis
+					similique sed nihil culpa reprehenderit praesentium hic, inventore qui
+					minus vitae dignissimos accusantium nulla iste voluptates rerum! Eius,
+					earum iure.
+				</p>
+			</div>
+		</div>
+		<script>
+			$(document).ready(function () {
+				$(".title").on("click", function () {
+					$(this).parents(".header").find(".desc").slideToggle();
+				});
+			});
+		</script>
+	</body>
+</html>
