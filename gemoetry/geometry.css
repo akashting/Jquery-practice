@@ -1,6 +1,28 @@
-.shapes div{
-    background-color: red;
+div{
+    margin: 50px;
+}
+
+.circle{
     width: 150px;
     height: 150px;
-    margin: 50px;
+    background-color:red;
+    border-radius: 50%;
+}
+.square{
+    width: 150px;
+    height: 150px;
+    background-color:blue;
+}
+
+.triangle{
+    width: 0;
+	height: 0;
+	border-left: 75px solid transparent;
+	border-right: 75px solid transparent;
+	border-bottom: 125px solid orange;
+}
+.rectangle{
+    width: 150px;
+    height: 80px;
+    background-color:green;
 }
