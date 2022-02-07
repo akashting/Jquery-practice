@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="div.css">
+    <title>Add div</title>
+</head>
+<body>
+    This is demo is to add div by clicking on btn. <br>
+    <input type="button" value="click to add div" onclick="add_div()">
+
+    <div id="not_selected">
+        <button onclick="moveButton(this)">button1</button>
+        <button onclick="moveButton(this)">button2</button>
+        <button onclick="moveButton(this)">button3</button>
+    </div>
+
+    <div id="selected"></div>
+
+    <script>
+        function add_div(){
+            $(document).ready(function () {
+                var text ={
+                    id:"div",
+                    class:"divclass",
+                    css:{
+                        color:"blue",
+                    }
+
+                }
+
+                var $div = $("<div>", text);
+                    $div.html("New Division"),
+                    $("body").append($div);
+            });
+        }
+
+        function moveButton(elem) {
+            if ($(elem).parent().attr("id") == "not_selected") {
+                    $(elem).detach().appendTo("#selected");
+                } else {
+                    $(elem).detach().appendTo("#not_selected");
+                }
+        }
+    </script>
+</body>
+</html>
