@@ -1,0 +1,73 @@
+section{
+    margin-top: 50px;
+}
+
+#shapes{
+    display: flex;
+    justify-content: space-around;
+}
+
+/* color */
+.color{
+    width: 50%;
+}
+
+.circle_box{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 50px;
+}
+
+.circle{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.circle_box #chocolate_circle{
+    background-color: chocolate;
+}
+.circle_box #blue_circle{
+    background-color: blue;
+}
+.circle_box #green_circle{
+    background-color: green;
+}
+
+.square_box{
+    width: 200px;
+    height: 200px;
+    background-color: yellow;
+}
+
+
+/* geometry */
+.geometry{
+    margin: 50px;
+}
+
+.circle{
+    width: 150px;
+    height: 150px;
+    background-color:red;
+    border-radius: 50%;
+}
+.square{
+    width: 150px;
+    height: 150px;
+    background-color:blue;
+}
+
+.triangle{
+    width: 0;
+	height: 0;
+	border-left: 75px solid transparent;
+	border-right: 75px solid transparent;
+	border-bottom: 125px solid orange;
+}
+.rectangle{
+    width: 150px;
+    height: 80px;
+    background-color:green;
+}

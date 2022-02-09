@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="index.css" />
+    <title>jquery Practice</title>
+  </head>
+  <body>
+    <section id="shapes">
+      <div class="color">
+        <div class="circle_box">
+          <div id="chocolate_circle" class="circle"></div>
+          <div id="blue_circle" class="circle"></div>
+          <div id="green_circle" class="circle"></div>
+        </div>
+        <div class="square_box"></div>
+      </div>
+
+      <div id="geometry">
+        <select class="shapes">
+          <option value="show_all">show all</option>
+          <option value="circle">circle</option>
+          <option value="square">square</option>
+          <option value="triangle">triangle</option>
+          <option value="rectangle">rectangle</option>
+        </select>
+        <div>
+          <div class="geometry circle"></div>
+          <div class="geometry square"></div>
+          <div class="geometry triangle"></div>
+          <div class="geometry rectangle"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="submit_button">
+      <input id="submit" type="checkbox" />I accept <br />
+      <input id="submit_btn" disabled="disabled" type="submit" value="Submit" />
+    </section>
+
+    <section id="blink_text">
+      <p>the is a <span>simple</span> text</p>
+    </section>
+
+    <section id="slec_json_val">
+      <p>Select value from JSON</p>
+
+      <div class="selected_val"></div>
+    </section>
+
+    <section id="add_new_element">
+      <ul>
+        <li>
+          <a href="https://www.w3schools.com/html/">HTML</a>
+        </li>
+        <li>
+          <a href="https://www.w3schools.com/js/default.asp">Javascript</a>
+        </li>
+      </ul>
+
+      <input
+        type="button"
+        value="Click to add element"
+        onclick="new_element()"
+      />
+    </section>
+
+    <section id="remove_option">
+      <select id="mycolor">
+        <option value="red">red</option>
+        <option value="blue">blue</option>
+        <option value="green">green</option>
+      </select>
+
+      <input
+        type="button"
+        class="remove_btn"
+        onclick="remove_option()"
+        value="click to remove option"
+      />
+    </section>
+
+    <section id="text_value">
+      <p>Get a value of text with jquery.</p>
+
+      <input type="text" class="text_value" value="Enter a text here" />
+    </section>
+
+    <script>
+      $(document).ready(function () {
+        // color
+        $(".circle").click(function () {
+          var color = $(this).css("background-color");
+          $(".square_box").css("background-color", color);
+        });
+
+        // geometry
+        $(".shapes").change(function () {
+          var getVal = $(this).val();
+          if (getVal == "show_all") {
+            $(".geometry").show();
+          } else {
+            $(".geometry").hide();
+            $("." + getVal).show();
+          }
+        });
+
+        // submit btn
+        $("#submit").click(function () {
+          if ($("#submit_btn").is(":disabled")) {
+            $("#submit_btn").removeAttr("disabled");
+          } else {
+            $("#submit_btn").attr("disabled", "disabled");
+          }
+        });
+
+        // blink text
+        function blink_text() {
+          $("span").fadeOut(300);
+          $("span").fadeIn(500);
+        }
+        setInterval(blink_text, 1000);
+
+        // Select JSON value
+        color = { color1: "Red", color2: "Blue", color3: "Green" };
+
+        $.each(color, function (key, value) {
+          $(".selected_val").append(
+            $("<option/>", { value: key, text: value })
+          );
+        });
+      });
+
+      $(document).ready(function () {
+        $(".text_value")
+          .keyup(function () {
+            var input_text = $(this).val();
+            console.log(input_text);
+          })
+          .keyup();
+      });
+
+      // add new element
+      function new_element() {
+        $("#add_new_element ul").append(
+          "<li><a href='https://www.w3schools.com/js/default.asp'>CSS</a></li>"
+        );
+      }
+
+      function remove_option() {
+        $("#mycolor").empty().append("<option value='yello'>yellow</option>");
+      }
+    </script>
+  </body>
+</html>
