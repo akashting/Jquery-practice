@@ -71,3 +71,22 @@ section{
     height: 80px;
     background-color:green;
 }
+
+/* remove remove class */
+.text_color{
+    color:indigo;
+}
+
+.larger{
+    font-size: 25px;
+}
+
+/* text underline */
+.underline_text span{
+    text-decoration: underline;
+}
+
+/* remove css */
+.css{
+    border: 2px solid rgb(255, 0, 234);
+}

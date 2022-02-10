@@ -42,7 +42,7 @@
     </section>
 
     <section id="blink_text">
-      <p>the is a <span>simple</span> text</p>
+      <p>the is a <span class="blink">simple</span> text</p>
     </section>
 
     <section id="slec_json_val">
@@ -89,6 +89,34 @@
       <input type="text" class="text_value" value="Enter a text here" />
     </section>
 
+    <section id="remove_classes">
+      <p id="text_item" class="text_color larger">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium iure
+        numquam voluptatibus optio quod itaque at blanditiis laborum accusantium
+        iusto eum, repellendus ab? Deserunt hic architecto quia illum!
+        Voluptates, eos!
+      </p>
+      <input
+        type="button"
+        class="remove_item"
+        value="click to remove classes"
+        onclick="remove_class()"
+      />
+    </section>
+
+    <section class="text_underline">
+      <p class="underline_text">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis assumenda
+        doloribus cum quaerat adipisci quisquam nesciunt, odit tempore facere et
+        deleniti mollitia. Ad possimus itaque cumque optio quis. Aperiam,
+        praesentium!
+      </p>
+    </section>
+
+    <section id="remove_css">
+      <h1 class="css">Remove css tutorial</h1>
+      <input type="button" class="remove_css" value="Click to remove css" onclick="removeCss()">
+    </section>
     <script>
       $(document).ready(function () {
         // color
@@ -119,8 +147,8 @@
 
         // blink text
         function blink_text() {
-          $("span").fadeOut(300);
-          $("span").fadeIn(500);
+          $(".blink").fadeOut(300);
+          $(".blink").fadeIn(500);
         }
         setInterval(blink_text, 1000);
 
@@ -140,6 +168,22 @@
             console.log(input_text);
           })
           .keyup();
+
+        // text underline
+        $(".underline_text").each(function () {
+          var text_words = $(this).text().split('');
+          $(this)
+            .empty()
+            .html(function () {
+              for (i = 0; i < text_words.length; i++) {
+                if (i === 0) {
+                  $(this).append('<span>' + text_words[i] + '</span>');
+                }else{
+                  $(this).append('<span>' + text_words[i] + '<span>');
+                }
+              };
+            });
+        });
       });
 
       // add new element
@@ -149,8 +193,19 @@
         );
       }
 
+      // remove option
       function remove_option() {
         $("#mycolor").empty().append("<option value='yello'>yellow</option>");
+      }
+
+      // remove classes
+      function remove_class() {
+        $("#text_item").toggleClass();
+      }
+
+      // remove CSS
+      function removeCss() {
+        $(".css").css("border", "0");
       }
     </script>
   </body>
