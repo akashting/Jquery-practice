@@ -88,7 +88,16 @@
 		<script>
 			$(document).ready(function () {
 				$(".title").click(function () {
-					$(this).parents(".header").find(".desc").slideToggle();
+					var isOpen = $(this).parents(".header").hasClass("isOpen");
+					if (isOpen) {
+						$(this).parents(".header").removeClass("isOpen");
+						$(this).siblings(".desc").slideUp();
+					} else {
+						$(".header").removeClass("isOpen");
+						$(this).parents(".header").addClass("isOpen");
+						$(".desc").slideUp();
+						$(this).siblings(".desc").slideDown();
+					}
 				});
 			});
 		</script>
