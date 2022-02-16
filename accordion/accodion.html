@@ -87,6 +87,14 @@
 		</div>
 		<script>
 			$(document).ready(function () {
+				$(window).on("load resize", function () {
+					if (window.outerWidth < 650) {
+						$("body").css("background-color", "green");
+					} else {
+						$("body").css("background-color", "red");
+					}
+				});
+
 				$(".title").click(function () {
 					var isOpen = $(this).parents(".header").hasClass("isOpen");
 					if (isOpen) {
@@ -100,6 +108,24 @@
 					}
 				});
 			});
+		</script>
+
+		<script>
+			function nextInLine(arr, item) {
+				// Only change code below this line
+				arr.push(item);
+				var removed = arr.shift();
+				return removed;
+				// Only change code above this line
+			}
+
+			// Setup
+			const testArr = [1, 2, 3, 4, 5];
+
+			// Display code
+			console.log("Before: " + JSON.stringify(testArr));
+			console.log(nextInLine(testArr, 5));
+			console.log("After: " + JSON.stringify(testArr));
 		</script>
 	</body>
 </html>
