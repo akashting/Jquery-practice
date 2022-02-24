@@ -42,7 +42,7 @@
     </section>
 
     <section id="blink_text">
-      <p>the is a <span class="blink">simple</span> text</p>
+      <p class="blink">the is a <span>simple</span> text</p>
     </section>
 
     <section id="slec_json_val">
@@ -150,7 +150,7 @@
           $(".blink").fadeOut(300);
           $(".blink").fadeIn(500);
         }
-        setInterval(blink_text, 1000);
+        setInterval(blink_text(), 1000);
 
         // Select JSON value
         color = { color1: "Red", color2: "Blue", color3: "Green" };
