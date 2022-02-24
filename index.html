@@ -1,212 +1,270 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="index.css" />
-    <title>jquery Practice</title>
-  </head>
-  <body>
-    <section id="shapes">
-      <div class="color">
-        <div class="circle_box">
-          <div id="chocolate_circle" class="circle"></div>
-          <div id="blue_circle" class="circle"></div>
-          <div id="green_circle" class="circle"></div>
-        </div>
-        <div class="square_box"></div>
-      </div>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<link rel="stylesheet" href="index.css" />
+		<title>jquery Practice</title>
+	</head>
+	<body>
+		<section id="shapes">
+			<div class="color">
+				<div class="circle_box">
+					<div id="chocolate_circle" class="circle"></div>
+					<div id="blue_circle" class="circle"></div>
+					<div id="green_circle" class="circle"></div>
+				</div>
+				<div class="square_box"></div>
+			</div>
 
-      <div id="geometry">
-        <select class="shapes">
-          <option value="show_all">show all</option>
-          <option value="circle">circle</option>
-          <option value="square">square</option>
-          <option value="triangle">triangle</option>
-          <option value="rectangle">rectangle</option>
-        </select>
-        <div>
-          <div class="geometry circle"></div>
-          <div class="geometry square"></div>
-          <div class="geometry triangle"></div>
-          <div class="geometry rectangle"></div>
-        </div>
-      </div>
-    </section>
+			<div id="geometry">
+				<select class="shapes">
+					<option value="show_all">show all</option>
+					<option value="circle">circle</option>
+					<option value="square">square</option>
+					<option value="triangle">triangle</option>
+					<option value="rectangle">rectangle</option>
+				</select>
+				<div>
+					<div class="geometry circle"></div>
+					<div class="geometry square"></div>
+					<div class="geometry triangle"></div>
+					<div class="geometry rectangle"></div>
+				</div>
+			</div>
+		</section>
 
-    <section id="submit_button">
-      <input id="submit" type="checkbox" />I accept <br />
-      <input id="submit_btn" disabled="disabled" type="submit" value="Submit" />
-    </section>
+		<section id="submit_button">
+			<input id="submit" type="checkbox" />I accept <br />
+			<input id="submit_btn" disabled="disabled" type="submit" value="Submit" />
+		</section>
 
-    <section id="blink_text">
-      <p class="blink">the is a <span>simple</span> text</p>
-    </section>
+		<section id="blink_text">
+			<p>the is a <span class="blink">simple</span> text</p>
+		</section>
 
-    <section id="slec_json_val">
-      <p>Select value from JSON</p>
+		<section id="slec_json_val">
+			<p>Select value from JSON</p>
 
-      <div class="selected_val"></div>
-    </section>
+			<div class="selected_val"></div>
+		</section>
 
-    <section id="add_new_element">
-      <ul>
-        <li>
-          <a href="https://www.w3schools.com/html/">HTML</a>
-        </li>
-        <li>
-          <a href="https://www.w3schools.com/js/default.asp">Javascript</a>
-        </li>
-      </ul>
+		<section id="add_new_element">
+			<ul>
+				<li>
+					<a href="https://www.w3schools.com/html/">HTML</a>
+				</li>
+				<li>
+					<a href="https://www.w3schools.com/js/default.asp">Javascript</a>
+				</li>
+			</ul>
 
-      <input
-        type="button"
-        value="Click to add element"
-        onclick="new_element()"
-      />
-    </section>
+			<input
+				type="button"
+				value="Click to add element"
+				onclick="new_element()"
+			/>
+		</section>
 
-    <section id="remove_option">
-      <select id="mycolor">
-        <option value="red">red</option>
-        <option value="blue">blue</option>
-        <option value="green">green</option>
-      </select>
+		<section id="remove_option">
+			<select id="mycolor">
+				<option value="red">red</option>
+				<option value="blue">blue</option>
+				<option value="green">green</option>
+			</select>
 
-      <input
-        type="button"
-        class="remove_btn"
-        onclick="remove_option()"
-        value="click to remove option"
-      />
-    </section>
+			<input
+				type="button"
+				class="remove_btn"
+				onclick="remove_option()"
+				value="click to remove option"
+			/>
+		</section>
 
-    <section id="text_value">
-      <p>Get a value of text with jquery.</p>
+		<section id="text_value">
+			<p>Get a value of text with jquery.</p>
 
-      <input type="text" class="text_value" value="Enter a text here" />
-    </section>
+			<input type="text" class="text_value" value="Enter a text here" />
+		</section>
 
-    <section id="remove_classes">
-      <p id="text_item" class="text_color larger">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium iure
-        numquam voluptatibus optio quod itaque at blanditiis laborum accusantium
-        iusto eum, repellendus ab? Deserunt hic architecto quia illum!
-        Voluptates, eos!
-      </p>
-      <input
-        type="button"
-        class="remove_item"
-        value="click to remove classes"
-        onclick="remove_class()"
-      />
-    </section>
+		<section id="remove_classes">
+			<p id="text_item" class="text_color larger">
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium iure
+				numquam voluptatibus optio quod itaque at blanditiis laborum accusantium
+				iusto eum, repellendus ab? Deserunt hic architecto quia illum!
+				Voluptates, eos!
+			</p>
+			<input
+				type="button"
+				class="remove_item"
+				value="click to remove classes"
+				onclick="remove_class()"
+			/>
+		</section>
 
-    <section class="text_underline">
-      <p class="underline_text">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis assumenda
-        doloribus cum quaerat adipisci quisquam nesciunt, odit tempore facere et
-        deleniti mollitia. Ad possimus itaque cumque optio quis. Aperiam,
-        praesentium!
-      </p>
-    </section>
+		<section class="text_underline">
+			<p class="underline_text">
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis assumenda
+				doloribus cum quaerat adipisci quisquam nesciunt, odit tempore facere et
+				deleniti mollitia. Ad possimus itaque cumque optio quis. Aperiam,
+				praesentium!
+			</p>
+		</section>
 
-    <section id="remove_css">
-      <h1 class="css">Remove css tutorial</h1>
-      <input type="button" class="remove_css" value="Click to remove css" onclick="removeCss()">
-    </section>
-    <script>
-      $(document).ready(function () {
-        // color
-        $(".circle").click(function () {
-          var color = $(this).css("background-color");
-          $(".square_box").css("background-color", color);
-        });
+		<section id="remove_css">
+			<h1 class="css">Remove css tutorial</h1>
+			<input
+				type="button"
+				class="remove_css"
+				value="Click to remove css"
+				onclick="removeCss()"
+			/>
+		</section>
 
-        // geometry
-        $(".shapes").change(function () {
-          var getVal = $(this).val();
-          if (getVal == "show_all") {
-            $(".geometry").show();
-          } else {
-            $(".geometry").hide();
-            $("." + getVal).show();
-          }
-        });
+		<section class="table">
+			<table>
+				<tr>
+					<th>Tools</th>
+					<th>Description</th>
+				</tr>
+				<tr>
+					<td>phpMyAdmin</td>
+					<td>Third party, Free, Web based</td>
+				</tr>
+				<tr>
+					<td>HeidiSQL</td>
+					<td>Third party, Free, For Windows</td>
+				</tr>
+				<tr>
+					<td>Adminer</td>
+					<td>Third party, Free</td>
+				</tr>
+				<tr>
+					<td>DBEdit</td>
+					<td>Third party, Free</td>
+				</tr>
+				<tr>
+					<td>dbForge GUI Tools</td>
+					<td>Third party, Free</td>
+				</tr>
+				<tr>
+					<td>Navicat</td>
+					<td>Third party, Commercial</td>
+				</tr>
+				<tr>
+					<td>Maatkit</td>
+					<td>Third party, Command line, free</td>
+				</tr>
+				<tr>
+					<td>MySQL Sandbox</td>
+					<td>Third party, Command line, free</td>
+				</tr>
+				<tr>
+					<td>SQLBuddy</td>
+					<td>A free Web-based front end, developed in PHP.</td>
+				</tr>
+				<tr>
+					<td>SQLyog</td>
+					<td>Commercial, but a free 'community' edition is available.</td>
+				</tr>
+				<tr>
+					<td>Toad for MySQL</td>
+					<td>Third party, free from Quest Software</td>
+				</tr>
+			</table>
+		</section>
+		<script>
+			$(document).ready(function () {
+				// color
+				$(".circle").click(function () {
+					var color = $(this).css("background-color");
+					$(".square_box").css("background-color", color);
+				});
 
-        // submit btn
-        $("#submit").click(function () {
-          if ($("#submit_btn").is(":disabled")) {
-            $("#submit_btn").removeAttr("disabled");
-          } else {
-            $("#submit_btn").attr("disabled", "disabled");
-          }
-        });
+				// geometry
+				$(".shapes").change(function () {
+					var getVal = $(this).val();
+					if (getVal == "show_all") {
+						$(".geometry").show();
+					} else {
+						$(".geometry").hide();
+						$("." + getVal).show();
+					}
+				});
 
-        // blink text
-        function blink_text() {
-          $(".blink").fadeOut(300);
-          $(".blink").fadeIn(500);
-        }
-        setInterval(blink_text(), 1000);
+				// submit btn
+				$("#submit").click(function () {
+					if ($("#submit_btn").is(":disabled")) {
+						$("#submit_btn").removeAttr("disabled");
+					} else {
+						$("#submit_btn").attr("disabled", "disabled");
+					}
+				});
 
-        // Select JSON value
-        color = { color1: "Red", color2: "Blue", color3: "Green" };
+				// blink text
+				function blink_text() {
+					$(".blink").fadeOut(300);
+					$(".blink").fadeIn(500);
+				}
+				setInterval(blink_text, 1000);
 
-        $.each(color, function (key, value) {
-          $(".selected_val").append(
-            $("<option/>", { value: key, text: value })
-          );
-        });
+				// Select JSON value
+				color = { color1: "Red", color2: "Blue", color3: "Green" };
 
-        // get a value of textbox using jquery
-        $(".text_value")
-          .keyup(function () {
-            var input_text = $(this).val();
-            console.log(input_text);
-          })
-          .keyup();
+				$.each(color, function (key, value) {
+					$(".selected_val").append(
+						$("<option/>", { value: key, text: value })
+					);
+				});
 
-        // text underline
-        $(".underline_text").each(function () {
-          var text_words = $(this).text().split('');
-          $(this)
-            .empty()
-            .html(function () {
-              for (i = 0; i < text_words.length; i++) {
-                if (i === 0) {
-                  $(this).append('<span>' + text_words[i] + '</span>');
-                }else{
-                  $(this).append('<span>' + text_words[i] + '<span>');
-                }
-              };
-            });
-        });
-      });
+				// get a value of textbox using jquery
+				$(".text_value")
+					.keyup(function () {
+						var input_text = $(this).val();
+						console.log(input_text);
+					})
+					.keyup();
 
-      // add new element
-      function new_element() {
-        $("#add_new_element ul").append(
-          "<li><a href='https://www.w3schools.com/js/default.asp'>CSS</a></li>"
-        );
-      }
+				// text underline
+				$(".underline_text").each(function () {
+					var text_words = $(this).text().split("");
+					$(this)
+						.empty()
+						.html(function () {
+							for (i = 0; i < text_words.length; i++) {
+								if (i === 0) {
+									$(this).append("<span>" + text_words[i] + "</span>");
+								} else {
+									$(this).append("<span>" + text_words[i] + "<span>");
+								}
+							}
+						});
+				});
+			});
 
-      // remove option
-      function remove_option() {
-        $("#mycolor").empty().append("<option value='yello'>yellow</option>");
-      }
+			// add new element
+			function new_element() {
+				$("#add_new_element ul").append(
+					"<li><a href='https://www.w3schools.com/js/default.asp'>CSS</a></li>"
+				);
+			}
 
-      // remove classes
-      function remove_class() {
-        $("#text_item").toggleClass();
-      }
+			// remove option
+			function remove_option() {
+				$("#mycolor").empty().append("<option value='yello'>yellow</option>");
+			}
 
-      // remove CSS
-      function removeCss() {
-        $(".css").css("border", "0");
-      }
-    </script>
-  </body>
+			// remove classes
+			function remove_class() {
+				$("#text_item").toggleClass();
+			}
+
+			// remove CSS
+			function removeCss() {
+				$(".css").css("border", "0");
+			}
+		</script>
+	</body>
 </html>
